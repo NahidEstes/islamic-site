@@ -10,8 +10,14 @@ import {
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   console.log(user);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => console.log(result.user))
+      .catch((error) => console.log(error));
+  };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
@@ -91,7 +97,10 @@ const Header = () => {
 
           <div>
             {user ? (
-              <button className="px-3 rounded bg-slate-500 text-white">
+              <button
+                onClick={handleLogOut}
+                className="px-3 rounded bg-slate-500 text-white"
+              >
                 Logout
               </button>
             ) : (
