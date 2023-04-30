@@ -7,7 +7,6 @@ const Home = () => {
   //   console.log(hadithData);
 
   const [data, setData] = useState([]);
-  console.log(data);
   useEffect(() => {
     fetch("http://localhost:5000/categories")
       .then((response) => response.json())
