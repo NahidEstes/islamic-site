@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 const HadithCategory = ({ hadithData }) => {
-  const { nameEnglish, hadith_number, nameBengali } = hadithData;
-
+  const [data, setData] = useState([]);
+  const { book_key, nameEnglish, hadith_number, nameBengali } = hadithData;
+  const hadithDatas = useLoaderData();
   const handleHadith = () => {
-    console.log("ddd");
+    console.log(hadithData);
   };
   return (
     <div>
-      <h2 onClick={handleHadith} className="font-semibold cursor-pointer">
-        {nameEnglish}
-      </h2>
+      <Link to={`/hadith/${book_key}`}>
+        <h2 onClick={handleHadith} className="font-semibold cursor-pointer">
+          {nameEnglish}
+        </h2>
+      </Link>
     </div>
   );
 };

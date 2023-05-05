@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Terms from "../components/Terms";
+import Hadith from "../components/Hadith";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/hadith",
+        element: <Hadith />,
+        loader: ({ params }) =>
+          fetch(`https://alquranbd.com/api/hadith/${params}`),
       },
       {
         path: "/books",
