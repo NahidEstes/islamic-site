@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Hadith from "../../components/Hadith";
 
 const HadithCategory = ({ hadithData }) => {
   const [data, setData] = useState([]);
