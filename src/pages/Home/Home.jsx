@@ -18,7 +18,9 @@ const Home = () => {
       <div className="flex custom-container">
         <div>
           {data.map((hadithData) => (
-            <HadithCategory key={hadithData.id} hadithData={hadithData} />
+            <>
+              <HadithCategory key={hadithData.id} hadithData={hadithData} />
+            </>
           ))}
         </div>
         <div>RightNav content</div>

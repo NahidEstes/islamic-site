@@ -8,6 +8,7 @@ const HadithCategory = ({ hadithData }) => {
   const hadithDatas = useLoaderData();
   const handleHadith = () => {
     console.log(hadithData);
+    <h1>loading</h1>;
   };
   return (
     <div>
@@ -16,6 +17,8 @@ const HadithCategory = ({ hadithData }) => {
           {nameEnglish}
         </h2>
       </Link>
+
+      {/* <p>{nameEnglish}</p> */}
     </div>
   );
 };

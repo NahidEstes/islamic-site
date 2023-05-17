@@ -24,12 +24,10 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/hadith",
+        path: "/hadith/:book_name",
         element: <Hadith />,
-        loader: ({ params }) =>
-          fetch(
-            `https://islamic-site-server-nahidestes.vercel.app/hadith/${params}`
-          ),
+
+        loader: () => fetch(`http://alquranbd.com/api/hadith`),
       },
       {
         path: "/books",
